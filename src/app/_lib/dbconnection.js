@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 export function dbConnection() {
   mongoose
     .connect(
-      `mongodb+srv://amira:rwzmh1f80GLmwQgG@cluster0.0p3m6.mongodb.net/Tasks?retryWrites=true&w=majority&appName=Cluster0`
+      `mongodb+srv://amira:<pass>@cluster0.0p3m6.mongodb.net/Tasks?retryWrites=true&w=majority&appName=Cluster0`
     )
     .then(() => {
       console.log("Connected to db");

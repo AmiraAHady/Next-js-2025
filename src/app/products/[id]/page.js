@@ -1,9 +1,18 @@
+import { getProductById } from '@/app/_lib/data-service'
 import React from 'react'
 
+
+export async function generateMetadata({ params }) {
+  const{data:product}=await getProductById(params.id)
+
+  return {
+    title: product.title,
+  }
+}
+
+
 const Page= async({params}) =>{
-    const res=await fetch(`https://fakestoreapi.com/products/${params.id}`)
-    const product= await res.json()
-    //products/:id
+    const{data:product}= await getProductById(params.id)
   return (
     <div>
         <h1>{product.title}</h1>

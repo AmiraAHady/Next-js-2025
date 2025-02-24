@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import styles from './header.module.css'
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 export default function NavBar() {
   const currentPath=usePathname()
@@ -13,7 +14,9 @@ export default function NavBar() {
     // <>
     <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand href="#home">
+            <Image src="/logonext.jpeg" width={50} height={50} alt='logo' quality={100}/>
+          </Navbar.Brand>
           <Nav className={`me-auto ${styles.link}`} >
             <Link href="/" className={(currentPath=='/'?"bg-danger":"")}>Home</Link>
             <Link href="/about" className={(currentPath=='/about'?"bg-danger":"")}>about</Link>

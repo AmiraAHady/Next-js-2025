@@ -14,5 +14,5 @@ const todoSchema=mongoose.Schema({
     }
 })
 
-export const todoModel=mongoose.model('Todo',todoSchema)
+export const todoModel=mongoose.models.Todo||mongoose.model('Todo',todoSchema)
 //todos

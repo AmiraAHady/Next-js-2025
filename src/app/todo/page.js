@@ -5,7 +5,7 @@ const ToDoList = async () => {
   // const data=await fetch('http://localhost:3000/api/todo')
   const res = await GET();
   const { data: todos } = await res.json();
-  console.log(todos);
+  
   return (
     <>
       {todos.map((t) => (
